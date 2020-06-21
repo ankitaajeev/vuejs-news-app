@@ -1,23 +1,27 @@
 <template>
   <div>
-      <b-col>
-        <b-card
-          :img-src="article.urlToImage"
-          img-alt="No Image"
-          img-top
-          img-height=212px
-          tag="article"
-          style="max-width: 20rem;"
-          class="myCard mb-3"
+    <b-col>
+      <b-card
+        :img-src="article.urlToImage"
+        img-alt="No Image"
+        blank-src="@/assests/placeholder.png"
+        img-top
+        img-height=212px
+        tag="article"
+        style="max-width: 20rem;"
+        class="articleCard mb-3"
+      >
+        <b-card-text class="textHeight">
+          {{ article.title }}
+        </b-card-text>
+        <b-button
+          :href="article.url"
+          variant="primary"
         >
-        <!-- <b-img> -->
-          <b-card-text class="textHeight">
-            {{ article.title }}
-          </b-card-text>
-
-          <b-button :href="article.url" variant="primary">Go to Article</b-button>
-        </b-card>
-      </b-col>
+          Go to Article
+        </b-button>
+      </b-card>
+    </b-col>
   </div>
 </template>
 
@@ -31,7 +35,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.myCard {
+.articleCard {
   min-height: 375px;
   height: 405px;
 }
